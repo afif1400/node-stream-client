@@ -32,8 +32,8 @@ export default function Home() {
       <button className="absolute right-8 top-8" onClick={() => setHide(!hide)} style={{ pointerEvents: "none"}}><RiMenu3Line size={40} color={hide ? "#ccff02" : "black"}/></button>
 
       <section className="flex h-4/5 bg-cover bg-black bg-no-repeat">
-        <div className='flex-grow flex justify-center align-center p-24'>
-          <img src="/image.jpg" className='z-20'/>
+        <div className='flex-grow flex justify-center items-center md:items-stretch pt-24 px-4 md:p-24'>
+          <img src="/image.jpg" className='z-20 h-96 w-96 md:h-auto md:w-auto object-cover'/>
         </div>
         <div className={`w-full md:w-80 bg-neon-pink ${hide ? "hidden" : "block"}`}>
         </div>

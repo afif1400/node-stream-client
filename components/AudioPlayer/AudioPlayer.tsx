@@ -68,7 +68,6 @@ const AudioPlayer: React.FC = () => {
     
     setFileNumber(fileNumber + 1)
     setAudioUrl(`http://65.2.74.184:5000/stream/${100 + fileNumber}`)
-    // audioPlayer.current.play()
     setCurrentTime(0)
   }
 
@@ -77,13 +76,17 @@ const AudioPlayer: React.FC = () => {
 
     setFileNumber(fileNumber - 1)
     setAudioUrl(`http://65.2.74.184:5000/stream/${100 + fileNumber}`)
-    // audioPlayer.current.play()
     setCurrentTime(0)
+  }
+
+  const onPlayingHandler = () => {
+    setIsPlaying(true)
+    animationRef.current = requestAnimationFrame(whilePlaying);
   }
   
   return (
     <div className='relative w-full h-full bg-black'>
-      <audio key={fileNumber} className="hidden" ref={audioPlayer} src={audioUrl} onEnded={nextSong} controls autoPlay/>
+      <audio key={fileNumber} className="hidden" ref={audioPlayer} src={audioUrl} onEnded={nextSong} controls autoPlay onPlaying={onPlayingHandler}/>
 
       <input className="absolute -top-1 w-full h-1 progressBar overflow-hidden" defaultValue={0} step={1} max={duration} type="range" ref={progressBar} onChange={changeRange}/>
 
