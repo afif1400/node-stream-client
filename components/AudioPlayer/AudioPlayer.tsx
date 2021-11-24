@@ -76,7 +76,7 @@ const AudioPlayer: React.FC = () => {
     if (fileNumber === 25) return;
     
     setFileNumber(fileNumber + 1)
-    setAudioUrl(`http://65.2.74.184:5000/stream/${100 + fileNumber}`)
+    setAudioUrl(`https://node-stream-api.herokuapp.com/stream/${100 + fileNumber}`)
     setCurrentTime(0)
   }
 
@@ -84,7 +84,7 @@ const AudioPlayer: React.FC = () => {
     if (fileNumber === 0) return;
 
     setFileNumber(fileNumber - 1)
-    setAudioUrl(`http://65.2.74.184:5000/stream/${100 + fileNumber}`)
+    setAudioUrl(`https://node-stream-api.herokuapp.com/stream/${100 + fileNumber}`)
     setCurrentTime(0)
   }
 
