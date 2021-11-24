@@ -10,7 +10,7 @@ const AudioPlayer: React.FC = () => {
   const [currentTime, setCurrentTime] = useState(0);
   const [fileNumber, setFileNumber] = useState(0);
   const [audioUrl, setAudioUrl] = useState(
-    `https://node-stream-api.herokuapp.com//stream/${100 + fileNumber}`
+    `https://node-stream-api.herokuapp.com/stream/${100 + fileNumber}`
   );
 
   // References
